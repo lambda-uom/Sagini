@@ -10,3 +10,9 @@ const finalProjectAssignmentSchema = new mongoose.Schema({
   submittedFile: { type: File }, //Need to check mongoDB compass
   status: { type: Boolean, default: false },
 });
+
+const finalProjectAssignments = mongoose.model(
+  "finalProjectAssignments",
+  finalProjectAssignmentSchema
+);
+module.exports = finalProjectAssignments;

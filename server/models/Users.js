@@ -11,14 +11,13 @@ const usersSchema = new mongoose.Schema({
   jobPosition: { type: mongoose.Schema.Types.ObjectId, ref: "departments" },
   badges: [
     {
-      badgeId: { type: mongoose.Schema.Types.ObjectId },
       badgeValue: { type: String },
       earnedOn: { type: Date },
     },
   ],
-  earnedMarksByDoingQuizzes: {
+  earnedScoresByQuiz: {
     numOfQuizzesDone: { type: Number },
-    totalMarksEarned: { type: Number },
+    totalScoresEarned: { type: Number },
   },
 });
 

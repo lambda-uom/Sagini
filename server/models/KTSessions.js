@@ -9,6 +9,7 @@ const KTSessionsSchema = new mongoose.Schema({
   overallComm: { type: Number },
   overallClarity: { type: Number },
   overallKnowledgeAndSkill: { type: Number },
+  createdBy: { type: mongoose.Types.ObjectId, ref: "users" },
 });
 
 const KTSessions = mongoose.model("KTSessions", KTSessionsSchema);

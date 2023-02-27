@@ -6,4 +6,7 @@ const articlesSchema = new mongoose.Schema({
   overallComm: { type: String },
   overallClarity: { type: String },
   overallKnowledgeAndSkill: { type: String },
+  createdBy: { type: mongoose.Types.ObjectId, ref: "users" },
 });
+const articles = mongoose.model("articles", articlesSchema);
+module.exports = articles;
