@@ -22,7 +22,7 @@ const quizSubmissionsSchema = new mongoose.Schema({
   questions: [
     {
       questionValue: { type: String },
-      answers: [{ type: String }],
+      answers: [String],
       correctAnswer: { type: Number },
       submittedAnswer: { type: Number },
     },
