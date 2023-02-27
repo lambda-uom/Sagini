@@ -1,10 +1,9 @@
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "react-avatar";
 import { useState } from "react";
 
 const ChapterReport = () => {
   const [selectedOption, setSelectedOption] = useState("Chapter Report");
-  const [average, setAverage] = useState(0);
   //get props
   const location = useLocation();
   const propsData = location.state;
@@ -15,7 +14,7 @@ const ChapterReport = () => {
     navigate(event.target.value, {
       state: {
         empId: propsData?.empId,
-        fistName: propsData?.firstName,
+        firstName: propsData?.firstName,
         lastName: propsData?.lastName,
       },
     });
@@ -41,7 +40,7 @@ const ChapterReport = () => {
           value={selectedOption}
           onChange={handleOptionChange}
         >
-          <option value="Chapter report">Chapter Report</option>
+          <option value="/chapterreport">Chapter Report</option>
           <option value="/overviewreport">OverviewReport</option>
         </select>
       </div>

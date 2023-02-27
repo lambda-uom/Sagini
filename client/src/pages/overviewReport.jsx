@@ -1,74 +1,72 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "react-avatar";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const OverviewReport = () => {
+  const [selectedOption, setSelectedOption] = useState("Overview Report");
   const location = useLocation();
   const propsData = location.state;
+  const navigate = useNavigate();
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+    navigate(event.target.value, {
+      state: {
+        empId: propsData?.empId,
+        firstName: propsData?.firstName,
+        lastName: propsData?.lastName,
+      },
+    });
+  };
   return (
     <div className="">
       <h1 className="py-4 result-head card ps-5 ">Overview Report</h1>
-      <div className="d-flex justify-content-between ms-5">
+      <div className="chap-name-select">
         <div className=".emp-name-and-id d-flex py-4 ms-5">
-          <Avatar name={`${propsData?.name}`} round />
+          <Avatar name={`${propsData?.firstName}`} round />
           <div className="d-flex flex-column ps-4">
-            <h2>{propsData?.name}</h2>
+            <h3>
+              {propsData?.firstName} {propsData?.lastName}
+            </h3>
 
-            <h4 className="text-secondary ms-2">{propsData?.id}</h4>
+            <h5 className="text-secondary ms-2">{propsData?.empId}</h5>
           </div>
         </div>
-        <div className="select animated zoomIn">
-          <input type="radio" name="option" />
-          <span className="placeholder">Choose...</span>
-          <label className="option">
-            <input type="radio" name="option" />
-            <span className="title animated fadeIn">
-              <Link
-                to="/chapterreport"
-                className="text-decoration-none text-dark"
-                state={{ id: propsData?.id, name: propsData?.name }}
-              >
-                Chapter report
-              </Link>
-            </span>
-          </label>
-          <label className="option">
-            <input type="radio" name="option" />
-            <span className="title animated fadeIn">Overview Report </span>
-          </label>
-        </div>
+        <select
+          className="form-select"
+          aria-label="Default select example"
+          value={selectedOption}
+          onChange={handleOptionChange}
+        >
+          <option value="/overviewreport">Overview Report</option>
+          <option value="/chapterreport">Chapter Report</option>
+        </select>
       </div>
 
-      <div className="d-flex justify-content-center">
-        <table className="overview-table table-primary table-hover table w-50">
+      <div className="">
+        <table className="table leaderboard-table container-lg">
           <thead>
-            <tr>
-              <th>#</th>
-              <th>Chapter</th>
-              <th>Score</th>
+            <tr className="table-head">
+              <th className="leaderboard-th align-middle text-center">
+                Chapter
+              </th>
+              <th className="leaderboard-th align-middle text-center">
+                # Units
+              </th>
+              <th className="leaderboard-th align-middle text-center">
+                Total Score
+              </th>
+              <th className="leaderboard-th align-middle text-center">
+                Average Score
+              </th>
             </tr>
           </thead>
 
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>React</td>
-              <td>78</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Java</td>
-              <td>48</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Flutter</td>
-              <td>26</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>MongoDB</td>
-              <td>54</td>
+            <tr className=" bg-primary bg-opacity-10 leaderboard-tr fw-semibold">
+              <td className="leaderboard-td align-middle text-center">HTML</td>
+              <td className="leaderboard-td align-middle text-center">10</td>
+              <td className="leaderboard-td align-middle text-center">750</td>
+              <td className="leaderboard-td align-middle text-center">75</td>
             </tr>
           </tbody>
         </table>

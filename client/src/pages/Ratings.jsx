@@ -20,28 +20,18 @@ const Ratings = () => {
             <h5 className="text-secondary">{propsData?.empId}</h5>
           </div>
         </div>
-        <form className="col col-12 col-lg-6 d-flex h-25">
-          <input
-            className=" form-control me-2 "
-            type="search"
-            placeholder="Search Chapter"
-          />
-          <button className="btn btn-outline-primary" type="submit">
-            Search
-          </button>
-        </form>
       </div>
       {/* before ratings */}
       <div className="row g-3 justify-content-evenly m-0">
         <div className="col col-11 col-lg-5 overall-chapter p-3 mx-4 mx-lg-0">
-          <h5 className="mt-3">Overall Chapter</h5>
+          <h5 className="mt-3">KT sessions</h5>
           <div className="d-flex">
             <div className=" w-50 mt-5 ms-lg-5 ms-md-5 ps-md-3 ms-sm-3">
               <div className="d-flex ms-3">
                 <span className="fw-bold me-1">4.5</span>
                 <FaStar color="orange" className="mt-1" />
               </div>
-              <h6 className="text-secondary">9 chapters</h6>
+              <h6 className="text-secondary">9 KT sessions</h6>
             </div>
             <div className="d-flex flex-column w-100">
               {overall.map((rate, index) => {
@@ -108,7 +98,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 KT sessions</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -139,7 +129,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 KT sessions</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -170,7 +160,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 KT sessions</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -201,7 +191,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 KT sessions</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -254,14 +244,14 @@ const Ratings = () => {
       {/* React */}
       <div className="row g-3 justify-content-evenly m-0">
         <div className="col col-11 col-lg-5 overall-chapter p-3 mx-4 mx-lg-0">
-          <h5 className="mt-3">React</h5>
+          <h5 className="mt-3">Articles</h5>
           <div className="d-flex">
             <div className=" w-50 mt-5 ms-lg-5 ms-md-5 ps-md-3 ms-sm-3">
               <div className="d-flex ms-3">
                 <span className="fw-bold me-1">2.9</span>
                 <FaStar color="orange" className="mt-1" />
               </div>
-              <h6 className="text-secondary">9 chapters</h6>
+              <h6 className="text-secondary">9 articles</h6>
             </div>
             <div className="d-flex flex-column w-100">
               {overall.map((rate, index) => {
@@ -328,7 +318,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.0</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 articles</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -359,7 +349,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">3.2</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 articles</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -390,7 +380,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 articles</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -421,7 +411,7 @@ const Ratings = () => {
                         <span className="fw-bold me-1">4.5</span>
                         <FaStar color="orange" className="mt-1" />
                       </div>
-                      <h6 className="text-secondary">9 chapters</h6>
+                      <h6 className="text-secondary">9 articles</h6>
                     </div>
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
@@ -447,7 +437,7 @@ const Ratings = () => {
             <button
               className="carousel-control-prev "
               type="button"
-              data-bs-target="#carouselExampleDark"
+              data-bs-target="#carouselExampleLight"
               data-bs-slide="prev"
             >
               <span
@@ -459,7 +449,7 @@ const Ratings = () => {
             <button
               class="carousel-control-next"
               type="button"
-              data-bs-target="#carouselExampleDark"
+              data-bs-target="#carouselExampleLight"
               data-bs-slide="next"
             >
               <span

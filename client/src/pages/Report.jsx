@@ -57,7 +57,7 @@ const Report = () => {
                 </a>
               </li>
             </ul>
-            <div id="content-creator" className="mt-2">
+            <div id="content-creator" className=" mt-2">
               <form className="d-flex justify-content-end ">
                 <input
                   className="form-control me-2"

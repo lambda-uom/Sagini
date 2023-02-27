@@ -384,12 +384,24 @@ Ratings
   .row svg {
     display: none;
   }
+  #content-creator form {
+    width: 32%;
+    margin-left: 24rem;
+  }
 }
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
+  #content-creator form {
+    width: 97%;
+    margin-left: 2rem;
+  }
 }
 @media screen and (max-width: 576px) {
+  #content-creator form {
+    width: 60%;
+    margin-left: 8rem;
+  }
 }
 
 /* For small devices */

@@ -1,10 +1,9 @@
 const express = require("express");
-const userRoute = express.Router();
+const user = express.Router();
 
 const Users = require("../models/Users");
 const JobTitle = require("../models/JobTitle");
-
-userRoute.get("/users", async (req, res) => {
+user.get("/users", async (req, res) => {
   let data = [];
   let users = await Users.find();
   for (let user of users) {
@@ -18,8 +17,7 @@ userRoute.get("/users", async (req, res) => {
   }
   res.json(data);
 });
-
-userRoute.post("/users/new", (req, res) => {
+user.post("/users/new", (req, res) => {
   let { empId, firstName, lastName, jobPosition } = req.body;
   const user = new Users({
     empId,
@@ -31,4 +29,4 @@ userRoute.post("/users/new", (req, res) => {
   res.json(user);
 });
 
-module.exports = userRoute;
+module.exports = user;

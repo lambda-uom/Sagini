@@ -15,10 +15,8 @@ mongoose
   .then(() => console.log("Connected successfully"))
   .catch((error) => console.log(error));
 
-const { urlencoded } = require("express");
+const user = require("./Routes/user");
 
-const userRoute = require("./Routes/userRoute");
-
-app.use(userRoute);
+app.use(user);
 
 app.listen(3001, () => console.log("Server is connected on 3001"));

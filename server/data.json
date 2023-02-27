@@ -1,0 +1,5 @@
+[
+  {"_id":"5a68fdc3615eda645bc6bdec","userId":"63e492acfcd770ee87359ed6","projScore":23,"feedback":"sooo good","gradedOn":"15-02-2023","gradedBy":"63e492dafcd770ee87359ed8","submittedDate":"23-02-2023","submittedFile":"example.zip","gradedOn":"25-02-2023","status":true},
+  {"_id":"5a68fdd7bee8ea64649c2777","userId":"63e4e0655ac204d16fa33f42","projScore":45,"feedback":"Hello This is OK","gradedOn":"15-02-2023","gradedBy":"63e4e1925ac204d16fa33f44","submittedDate":"23-02-2023","submittedFile":"Hello.zip","gradedOn":"25-02-2023","status":false},
+  {"_id":"5a68fde3f09ad7646ddec17e","userId":"63e4e1d55ac204d16fa33f45","projScore":89,"feedback":"Jeuuuuu","gradedOn":"15-02-2023","gradedBy":"63fb80119faee66675196b35","submittedDate":"23-02-2023","submittedFile":"World.zip","gradedOn":"25-02-2023","status":true}
+]
