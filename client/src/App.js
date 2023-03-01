@@ -17,7 +17,7 @@ import QuizReportFront from "./pages/quizReportFront";
 import QuizReport from "./pages/quizReport";
 import Ratings from "./pages/Ratings";
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "http://localhost:8080";
 
 export const AppContext = createContext();
 

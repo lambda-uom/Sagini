@@ -8,6 +8,7 @@ const departments = require("../models/departments");
 user.get("/users", async (req, res) => {
   let userWithUserRoles = [];
   let jobTitle;
+  let department;
   let finalData = [];
   //add userRole into users collection
   let usersData = await users.find();
@@ -27,13 +28,15 @@ user.get("/users", async (req, res) => {
     for (let i = 0; i < deptCollection.jobTitles.length; i++) {
       jobTitle = deptCollection.jobTitles[i].jobTitle;
     }
+    department = deptCollection.depName;
+
     let addJobTitle = {
       ...userUserRole,
       jobTitle,
+      department,
     };
     finalData.push(addJobTitle);
   }
-  console.log(finalData);
   res.json(finalData);
 });
 

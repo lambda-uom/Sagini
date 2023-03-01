@@ -19,4 +19,4 @@ const user = require("./Routes/user");
 
 app.use(user);
 
-app.listen(3001, () => console.log("Server is connected on 3001"));
+app.listen(8080, () => console.log("Server is connected on 8080"));
