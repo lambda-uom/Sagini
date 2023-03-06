@@ -1,8 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "react-avatar";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import App, { AppContext } from "../App";
 
 const ChapterReport = () => {
+  const { chapter } = useContext(AppContext);
+  const { unit } = useContext(AppContext);
+  const [navActive, setNavActive] = useState(0);
   const [selectedOption, setSelectedOption] = useState("Chapter Report");
   //get props
   const location = useLocation();
@@ -45,81 +49,41 @@ const ChapterReport = () => {
         </select>
       </div>
 
-      <div class=" chapter-content m-3 pt-5">
+      <div className=" chapter-content m-3 pt-5">
         <div
           className="nav flex-column nav-pills me-3"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
         >
-          <button
-            className="nav-link active"
-            id="v-pills-home-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-home"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-home"
-            aria-selected="true"
-          >
-            HTML
-          </button>
-          <button
-            className="nav-link"
-            id="v-pills-profile-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-profile"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-profile"
-            aria-selected="false"
-          >
-            React
-          </button>
-          <button
-            class="nav-link"
-            id="v-pills-disabled-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-disabled"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-disabled"
-            aria-selected="false"
-          >
-            Java
-          </button>
-          <button
-            class="nav-link"
-            id="v-pills-messages-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-messages"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-messages"
-            aria-selected="false"
-          >
-            Messages
-          </button>
-          <button
-            class="nav-link"
-            id="v-pills-settings-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-settings"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-settings"
-            aria-selected="false"
-          >
-            Settings
-          </button>
+          {chapter.map((chap, index) => (
+            <>
+              <button
+                key={index}
+                className={index == navActive ? "nav-link active" : "nav-link"}
+                data-bs-toggle="pill"
+                data-bs-target="#0"
+                type="button"
+                role="tab"
+              >
+                {chap.chapterName}
+              </button>
+            </>
+          ))}
         </div>
-        <div class="tab-content" id="v-pills-tabContent">
+        <div className="tab-content" id="v-pills-tabContent">
+          <div className="tab-pane fade" id="0" role="tabpanel" tabIndex="0">
+            Hello world
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="tab-content" id="v-pills-tabContent">
           <div
-            class="tab-pane fade show active"
+            className="tab-pane fade show active"
             id="v-pills-home"
             role="tabpanel"
-            aria-labelledby="v-pills-home-tab"
-            tabindex="0"
+            tabIndex="0"
           >
             <table className="table leaderboard-table">
               <thead>
@@ -159,43 +123,39 @@ const ChapterReport = () => {
             </table>
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="v-pills-profile"
             role="tabpanel"
-            aria-labelledby="v-pills-profile-tab"
-            tabindex="0"
+            tabIndex="0"
           >
             ...
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="v-pills-disabled"
             role="tabpanel"
-            aria-labelledby="v-pills-disabled-tab"
-            tabindex="0"
+            tabIndex="0"
           >
             ...
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="v-pills-messages"
             role="tabpanel"
-            aria-labelledby="v-pills-messages-tab"
-            tabindex="0"
+            tabIndex="0"
           >
             ...
           </div>
           <div
-            class="tab-pane fade"
+            className="tab-pane fade"
             id="v-pills-settings"
             role="tabpanel"
-            aria-labelledby="v-pills-settings-tab"
-            tabindex="0"
+            tabIndex="0"
           >
             ...
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 };

@@ -23,8 +23,14 @@ export const AppContext = createContext();
 
 function App() {
   const [employee, setEmployee] = useState([]);
+  const [unit, setUnit] = useState([]);
+  const [chapter, setChapter] = useState([]);
+  const [quizSubmission, setQuizSubmission] = useState([]);
   useEffect(() => {
     GetUsers();
+    Getunit();
+    GetChapter();
+    GetQuizSubmissions();
   }, []);
 
   const GetUsers = () => {
@@ -35,10 +41,35 @@ function App() {
       })
       .catch((error) => console.error("Error: ", error));
   };
+  const Getunit = () => {
+    axios
+      .get(API_BASE + "/unit")
+      .then((res) => setUnit(res.data))
+      .catch((error) => console.log(error));
+  };
+  const GetChapter = () => {
+    axios
+      .get(API_BASE + "/chapter")
+      .then((res) => setChapter(res.data))
+      .catch((error) => console.log(error));
+  };
+  const GetQuizSubmissions = () => {
+    axios
+      .get(API_BASE + "/quiz_submission")
+      .then((res) => setQuizSubmission(res.data))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="App">
-      <AppContext.Provider value={{ employee }}>
+      <AppContext.Provider
+        value={{
+          employee: employee,
+          unit: unit,
+          chapter: chapter,
+          quizSubmission: quizSubmission,
+        }}
+      >
         <Router>
           <nav
             className="navbar navbar-expand-lg navbar-light "
@@ -127,6 +158,8 @@ function App() {
 }
 
 export default App;
+
+// , { unit }, { chapter }
 
 // {
 //   id: "1234Y",

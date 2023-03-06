@@ -1,8 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Avatar from "react-avatar";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../App";
 
 const OverviewReport = () => {
+  const { chapter } = useContext(AppContext);
+  const { quizSubmission } = useContext(AppContext);
+  const [totalScore, setTotalScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState("Overview Report");
   const location = useLocation();
   const propsData = location.state;
@@ -17,6 +21,7 @@ const OverviewReport = () => {
       },
     });
   };
+
   return (
     <div className="">
       <h1 className="py-4 result-head card ps-5 ">Overview Report</h1>
@@ -62,12 +67,33 @@ const OverviewReport = () => {
           </thead>
 
           <tbody>
-            <tr className=" bg-primary bg-opacity-10 leaderboard-tr fw-semibold">
-              <td className="leaderboard-td align-middle text-center">HTML</td>
-              <td className="leaderboard-td align-middle text-center">10</td>
-              <td className="leaderboard-td align-middle text-center">750</td>
-              <td className="leaderboard-td align-middle text-center">75</td>
-            </tr>
+            {chapter.map((chap, index) => (
+              <tr
+                key={index}
+                className=" bg-primary bg-opacity-10 leaderboard-tr fw-semibold"
+              >
+                <td className="leaderboard-td align-middle text-center">
+                  {chap.chapterName}
+                </td>
+                <td className="leaderboard-td align-middle text-center">
+                  {chap.unitsOffer.length}
+                </td>
+
+                {/* {quizSubmission.map(
+                  (quiz) =>
+                    chap._id == quiz.chapterId &&
+                    console.log("Sub...", quiz.score)
+                )} */}
+                {/* setTotalScore(
+    quizSubmission.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.score;
+    })
+  );
+  console.log(totalScore); */}
+                <td className="leaderboard-td align-middle text-center">750</td>
+                <td className="leaderboard-td align-middle text-center">75</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

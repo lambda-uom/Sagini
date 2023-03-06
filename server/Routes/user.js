@@ -74,18 +74,3 @@ module.exports = user;
 //   user.save();
 //   res.json(user);
 // });
-
-// user.get("/users", async (req, res) => {
-//   let userWithUserRoles = [];
-//   let users = await Users.find();
-//   for (let user of users) {
-//     let { jobTitle } = await JobTitle.findOne({ _id: user.jobPosition });
-//     let doc = {
-//       ...user.toObject(),
-//       jobTitle,
-//     };
-
-//     userWithUserRoles.push(doc);
-//   }
-//   res.json(userWithUserRoles);
-// });

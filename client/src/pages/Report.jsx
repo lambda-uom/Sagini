@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Search from "./../subComponents/search";
@@ -6,6 +6,7 @@ import TabReport from "./../component/tabReport";
 
 const Report = () => {
   const { employee } = useContext(AppContext);
+  const { unit } = useContext(AppContext);
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState();
   const [show, setShow] = useState(true);

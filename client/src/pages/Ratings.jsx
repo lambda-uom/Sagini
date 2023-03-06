@@ -5,7 +5,6 @@ import { useState } from "react";
 const Ratings = () => {
   const location = useLocation();
   const propsData = location.state;
-  console.log(propsData);
   const [overall] = useState([42, 10, 83, 43, 53]);
   return (
     <>
@@ -36,7 +35,7 @@ const Ratings = () => {
             <div className="d-flex flex-column w-100">
               {overall.map((rate, index) => {
                 return (
-                  <div className="d-flex flex-row w-100 my-1">
+                  <div key={index} className="d-flex flex-row w-100 my-1">
                     <span>{index + 1} star</span>
                     <span className="progress w-50 mx-2">
                       <span
@@ -60,12 +59,12 @@ const Ratings = () => {
             className="carousel carousel-dark slide "
             data-bs-ride="carousel"
           >
-            <div class="carousel-indicators">
+            <div className="carousel-indicators">
               <button
                 type="button"
                 data-bs-target="#carouselExampleDark"
                 data-bs-slide-to="0"
-                class="active"
+                className="active"
                 aria-current="true"
                 aria-label="Slide 1"
               ></button>
@@ -88,8 +87,8 @@ const Ratings = () => {
                 aria-label="Slide 4"
               ></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+            <div className="carousel-inner">
+              <div className="carousel-item active" data-bs-interval="10000">
                 <div className="rating-type ">
                   <h5 className="mt-3">Quality Rate</h5>
                   <div className="d-flex">
@@ -103,7 +102,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -120,7 +122,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <div className="rating-type">
                   <h5 className="mt-3">Communication Rate</h5>
                   <div className="d-flex">
@@ -134,7 +136,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -151,7 +156,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <div className="rating-type">
                   <h5 className="mt-3">Clarity Rate</h5>
                   <div className="d-flex">
@@ -165,7 +170,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -182,7 +190,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <div className="rating-type">
                   <h5 className="mt-3">Knowledge and Skill Rate</h5>
                   <div className="d-flex">
@@ -196,7 +204,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -221,22 +232,22 @@ const Ratings = () => {
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleDark"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>
@@ -256,7 +267,7 @@ const Ratings = () => {
             <div className="d-flex flex-column w-100">
               {overall.map((rate, index) => {
                 return (
-                  <div className="d-flex flex-row w-100 my-1">
+                  <div key={index} className="d-flex flex-row w-100 my-1">
                     <span>{index + 1} star</span>
                     <span className="progress w-50 mx-2">
                       <span
@@ -280,12 +291,12 @@ const Ratings = () => {
             className="carousel carousel-dark slide "
             data-bs-ride="carousel"
           >
-            <div class="carousel-indicators">
+            <div className="carousel-indicators">
               <button
                 type="button"
                 data-bs-target="#carouselExampleLight"
                 data-bs-slide-to="0"
-                class="active"
+                className="active"
                 aria-current="true"
                 aria-label="Slide 1"
               ></button>
@@ -308,8 +319,8 @@ const Ratings = () => {
                 aria-label="Slide 4"
               ></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+            <div className="carousel-inner">
+              <div className="carousel-item active" data-bs-interval="10000">
                 <div className="rating-type ">
                   <h5 className="mt-3">Quality Rate</h5>
                   <div className="d-flex">
@@ -323,7 +334,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -340,7 +354,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <div className="rating-type">
                   <h5 className="mt-3">Communication Rate</h5>
                   <div className="d-flex">
@@ -354,7 +368,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -371,7 +388,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <div className="rating-type">
                   <h5 className="mt-3">Clarity Rate</h5>
                   <div className="d-flex">
@@ -385,7 +402,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -402,7 +422,7 @@ const Ratings = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <div className="rating-type">
                   <h5 className="mt-3">Knowledge and Skill Rate</h5>
                   <div className="d-flex">
@@ -416,7 +436,10 @@ const Ratings = () => {
                     <div className="d-flex flex-column w-100">
                       {overall.map((rate, index) => {
                         return (
-                          <div className="d-flex flex-row w-100 my-1">
+                          <div
+                            key={index}
+                            className="d-flex flex-row w-100 my-1"
+                          >
                             <span>{index + 1} star</span>
                             <span className="progress w-50 mx-2">
                               <span
@@ -441,22 +464,22 @@ const Ratings = () => {
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleLight"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>

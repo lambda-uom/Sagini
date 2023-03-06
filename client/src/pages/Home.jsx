@@ -65,13 +65,13 @@ const Home = () => {
             <td>
               <Link to="/chapterreport">Chapter Report</Link>
             </td>
-            <td>Supervisor</td>
+            <td>Supervisor, Hired Employee</td>
           </tr>
           <tr>
             <td>
               <Link to="/overviewreport">Overview Report</Link>
             </td>
-            <td>Supervisor</td>
+            <td>Supervisor, Hired Employee</td>
           </tr>
           <tr>
             <td>
